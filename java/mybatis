@@ -1,0 +1,10 @@
+## Templates for mybatis ##
+
+.notDelete : 创建忽略is_deleted=1的查询
+	CLASS                    →  QueryWrapper<$expr$> query = QueryWrapperUtils.createIgnoreDelete();$END$
+
+.notDeleteAndStatus : 创建忽略is_deleted=1且status=1的查询
+	CLASS                    →  QueryWrapper<$expr$> query = QueryWrapperUtils.createIgnoreDelete(); query.eq("status", 1);$END$
+
+.checkName : 创建重名查询, 忽略is_deleted=1且status=1
+	CLASS                    →  QueryWrapper<$expr$> query = QueryWrapperUtils.createIgnoreDelete(); query.eq("status", 1);query.eq("name", $arg$.trim());query.ne("id", $arg$);$END$
