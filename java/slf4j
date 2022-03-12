@@ -1,0 +1,7 @@
+## Templates for slf4j ##
+
+.sld : log debug message
+	java.lang.String    [org.slf4j.Logger]  →  $log*:variableOfType("org.slf4j"):"log"$.debug($expr$);
+
+.sli : log debug message
+	java.lang.String    [org.slf4j.Logger]  →  $log*:variableOfType("org.slf4j"):"log"$.info($expr$);
