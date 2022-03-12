@@ -6,5 +6,5 @@
 .notDeleteAndStatus : 创建忽略is_deleted=1且status=1的查询
 	CLASS                    →  QueryWrapper<$expr$> query = QueryWrapperUtils.createIgnoreDelete(); query.eq("status", 1);$END$
 
-.checkName : 创建重名查询, 忽略is_deleted=1且status=1
+.checkName : 创建重名查询, 忽略is_deleted=1且status=1 
 	CLASS                    →  QueryWrapper<$expr$> query = QueryWrapperUtils.createIgnoreDelete(); query.eq("status", 1);query.eq("name", $name$.trim());QueryWrapperUtils.ne("id", $id$, query);$END$
